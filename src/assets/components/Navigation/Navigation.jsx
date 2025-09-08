@@ -1,25 +1,19 @@
 import "./Navigation.css";
 import { Tabs } from "./Tabs";
+import { NavLink } from "react-router-dom";
 
 export const Navigation = ({ activeTab, setActiveTab }) => {
 	return (
 		<nav className="nav-container">
 			<div className="tab-container">
 				{Object.entries(Tabs).map(([property, value]) => (
-					<button
+					<NavLink
 						key={property}
-						className={`tab ${activeTab === property ? "active" : ""}`}
-						onClick={() => {
-							setActiveTab(property);
-							const sectionId = `${property.toLowerCase()}-section`;
-							const section = document.getElementById(sectionId);
-							if (section) {
-								section.scrollIntoView({ behavior: "smooth" });
-							}
-						}}
+						to={property === "Home" ? "/" : `/${property.toLowerCase()}`}
+						className={({ isActive }) => `tab ${isActive ? "active" : ""}`}
 					>
 						{value}
-					</button>
+					</NavLink>
 				))}
 			</div>
 		</nav>

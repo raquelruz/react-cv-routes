@@ -9,6 +9,7 @@ import { Education } from "./assets/components/Education/Education";
 import { Skills } from "./assets/components/Skills/Skills";
 import { ContactForm } from "./assets/components/ContactForm/ContactForm";
 import { useToggleTheme } from "./assets/components/UseToggleTheme/UseToggleTheme";
+import { Routes, Route } from "react-router-dom";
 
 const INITIAL_TAB = Object.keys(Tabs)[0];
 
@@ -22,28 +23,16 @@ export const App = () => {
 				<Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
 
 				<button onClick={toggleDarkMode} className="theme-toggle-btn">
-					{darkMode ? "☀️": "🌙"}
+					{darkMode ? "☀️" : "🌙"}
 				</button>
 
-				<section id="home-section">
-					<Home />
-				</section>
-
-				<section id="experience-section">
-					<Experience data={cvData.experience} />
-				</section>
-
-				<section id="education-section">
-					<Education data={cvData.education} />
-				</section>
-
-				<section id="skills-section">
-					<Skills skills={cvData.skills} />
-				</section>
-
-				<section id="contact-section">
-					<ContactForm cvData={cvData} />
-				</section>
+				<Routes>
+					<Route path="/home" element={<Home />} />
+					<Route path="/experience" element={<Experience data={cvData.experience} />} />
+					<Route path="/education" element={<Education data={cvData.education} />} />
+					<Route path="/skills" element={<Skills skills={cvData.skills} />} />
+					<Route path="/contact" element={<ContactForm cvData={cvData} />} />
+				</Routes>
 
 				<button className="scroll-to-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
 					↑
