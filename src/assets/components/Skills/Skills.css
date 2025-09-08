@@ -1,0 +1,87 @@
+.skills-section {
+	padding: 0.2rem 2rem;
+}
+
+.skills-container {
+	padding: 1rem;
+}
+
+.skills-container h3 {
+	margin-top: 2rem;
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	color: var(--text-color);
+}
+
+.skill-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.6rem;
+}
+
+.skill-btn {
+	background-color: var(--accent-color);
+	border: none;
+	border-radius: 20px;
+	padding: 0.5rem 1.2rem;
+	color: var(--text-color);
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: 0 2px 5px var(--contrast-color);
+}
+
+.skill-btn:hover,
+.skill-btn:focus {
+	background-color: var(--contrast-color);
+	box-shadow: 0 4px 10px rgba(190, 147, 4, 0.6);
+	outline: none;
+}
+
+/* RESPONSIVE */
+@media (min-width: 481px) {
+	.skills-section {
+		padding: 0.2rem 2rem;
+	}
+
+	.skill-buttons {
+		gap: 1rem;
+	}
+
+	.skill-btn {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.skills-section {
+		padding: 0.2rem 4rem;
+	}
+
+	.skill-buttons {
+		gap: 1.3rem;
+	}
+
+	.skill-btn {
+		font-size: 1.4rem;
+	}
+}
+
+@media (min-width: 1440px) {
+	.skills-section {
+		padding: 0.2rem 5rem;
+	}
+
+	.skills-container h3 {
+		font-size: 2rem;
+	}
+
+	.skill-buttons {
+		gap: 1.6rem;
+	}
+
+	.skill-btn {
+		font-size: 1.6rem;
+	}
+}
